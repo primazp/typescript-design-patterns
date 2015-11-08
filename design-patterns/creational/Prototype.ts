@@ -9,9 +9,9 @@ class Coffee {
         return this.kind;
     }
 
-    /** Please pay attention. Object.create is used only for example.
-     * It does not handle nested objects structure and therefore
-     * CAN NOT be used in production.
+    /** Please pay attention. Object.create is used only for the
+     * example purpose. It does not handle nested objects structure
+     * and therefore CAN NOT be used in production.
      * @see http://stackoverflow.com/questions/728360/most-elegant-way-to-clone-a-javascript-object
      * */
     clone() : Coffee {
