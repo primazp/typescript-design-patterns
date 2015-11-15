@@ -56,7 +56,7 @@ var accountProxy = new BankAccountProxy(account);
 accountProxy.deposit(200);
 console.log(accountProxy.getBalance());
 
-currentUser = 'July Duly';
+currentUser = 'Jane Doe';
 try {
     accountProxy.withdraw(200);
 } catch (e) {
