@@ -1,4 +1,4 @@
-// Subsystem
+// Private inaccessible subsystem
 interface CarEngine {
     getModel(): string;
 }
@@ -33,15 +33,17 @@ class Car {
 }
 
 // Facade
-class Facade {
-    static getBMWCar(): Car {
+class CarDistributor {
+    getBMWCar(): Car {
         return new Car('BMW E92', new N54Engine(), new E92Body());
     }
 
-    static getPorscheCar(): Car {
+    getPorscheCar(): Car {
         return new Car('Porsche Carrera GT', new V10Engine(), new TwoDoorRoadster());
     }
 }
 
-console.log(Facade.getBMWCar().toString());
-console.log(Facade.getPorscheCar().toString());
+var facade = new CarDistributor();
+
+console.log(facade.getBMWCar().toString());
+console.log(facade.getPorscheCar().toString());
