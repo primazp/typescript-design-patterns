@@ -1,36 +1,41 @@
-abstract class Product {
-    abstract getClass(): string;
+// abstract Product
+abstract class Warrior {
+    abstract getInfo(): string;
 }
 
-class ConcreteProductA extends Product {
-    getClass() {
-        return 'ConcreteProductA';
+// Concrete Product A
+class Archer extends Warrior {
+    getInfo() {
+        return 'The one with the bow.';
     }
 }
 
-class ConcreteProductB extends Product {
-    getClass() {
-        return 'ConcreteProductB';
+class SwordsMan extends Warrior {
+    getInfo() {
+        return 'The one with the sword.';
     }
 }
 
-abstract class Creator {
-    abstract factoryMethod() : Product;
+// Creator
+abstract class Barracks {
+    abstract trainUnit() : Warrior;
 }
 
-class ConcreteCreatorA extends Creator {
-    factoryMethod() {
-        return new ConcreteProductA();
+// Concrete creator A
+class ArcheryRange extends Barracks {
+    trainUnit() {
+        return new Archer();
     }
 }
 
-class ConcreteCreatorB extends Creator {
-    factoryMethod() {
-        return new ConcreteProductB();
+// Concrete creator B
+class TrainingYard extends Barracks {
+    trainUnit() {
+        return new SwordsMan();
     }
 }
 
-for (var creator of [new ConcreteCreatorA(), new ConcreteCreatorB()]) {
-    var product = creator.factoryMethod();
-    console.log(product.getClass());
+for (var creator of [new ArcheryRange(), new TrainingYard()]) {
+    var warrior = creator.trainUnit();
+    console.log(warrior.getInfo());
 }
