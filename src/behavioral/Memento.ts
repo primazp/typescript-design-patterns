@@ -12,6 +12,11 @@
 * the caretaker cannot, or should not, change). When using this pattern, care should
 * be taken if the originator may change other objects or resources - the memento
 * pattern operates on a single object.
+*
+* Memento pattern is a powerful design pattern to store the state of an object.
+* One other usage is the implementation of 'Ok' and 'Cancel' dialog where we store
+* the state of the object on load of dialog and work on the main object.
+* If user presses 'Cancel', we restore to the initial state.
 */
 
 class Memento {
