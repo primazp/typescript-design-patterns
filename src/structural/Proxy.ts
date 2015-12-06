@@ -1,3 +1,15 @@
+/**
+* A proxy, in its most general form, is a class functioning as an interface to
+* something else. The proxy could interface to anything: a network connection,
+* a large object in memory, a file, or some other resource that is expensive or
+* impossible to duplicate. In short, a proxy is a wrapper or agent object that is
+* being called by the client to access the real serving object behind the scenes.
+*
+* The example below is a simple Security Proxy. BankAccountProxy will determine
+* if the current user is an owner of the account and, therefore, is able to access
+* the object of interest.
+*/
+
 var currentUser;
 
 class BankAccount {
@@ -11,13 +23,9 @@ class BankAccount {
         this.balance -= amount;
     }
 
-    getOwner() : string {
-        return this.owner;
-    }
+    getOwner() : string { return this.owner; }
 
-    getBalance() : number {
-        return this.balance;
-    }
+    getBalance() : number { return this.balance; }
 }
 
 class BankAccountProxy {

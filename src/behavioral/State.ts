@@ -1,3 +1,11 @@
+/**
+* The state pattern, which closely resembles Strategy Pattern, is a behavioral software design
+* pattern, also known as the objects for states pattern. This pattern is used in computer 
+* programming to encapsulate varying behavior for the same object based on its internal state.
+* This can be a cleaner way for an object to change its behavior at runtime without resorting to
+* large monolithic conditional statements and thus improve maintainability.
+*/
+
 enum VehicleState {
     PARKED,
     IDLING,
