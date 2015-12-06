@@ -1,35 +1,32 @@
 // Command interface
-interface Launcher {
-  fire(): void;
+interface Command {
+  execute(): void;
 }
 
-// The receiver A
-class AirToAirMissile {
-  public launch(): void {
-    console.log("Launching air to air missle...");
-  }
-}
+// Concrete command B
+class ShinyButton {
+  constructor(private name: string, private command: Command){};
 
-// The receiver B
-class AirToSurfaceMissile {
-  public launch(): void {
-    console.log("Launching air to surface missle...")
+  public click(): void {
+    this.command.execute()
   }
 }
 
 // Concrete command A
-class A2ALauncher implements Launcher {
-  fire() {
-    new AirToAirMissile().launch();
+class SaveCommand implements Command {
+  execute() {
+    console.log("Saving game state on disk...");
   }
 }
 
 // Concrete command B
-class A2SLaucnher implements Launcher {
-  fire() {
-    new AirToSurfaceMissile().launch();
+class LoadCommand implements Command {
+  execute() {
+    console.log("Restoring game state from the previously saved file...");
   }
 }
 
-new A2ALauncher().fire();
-new A2SLaucnher().fire();
+var saveGameButton = new ShinyButton("Save Game", new SaveCommand());
+var loadGameButton = new ShinyButton("Load Game", new LoadCommand());
+saveGameButton.click();
+loadGameButton.click();
